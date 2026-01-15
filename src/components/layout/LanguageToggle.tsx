@@ -1,23 +1,24 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
 /**
  * Neo-Brutalist Language Toggle
- * Simple EN/ES toggle
+ * Simple EN/ES toggle using cookies
  */
 export function LanguageToggle() {
   const locale = useLocale();
   const router = useRouter();
-  const pathname = usePathname();
 
   const toggleLocale = () => {
     const newLocale = locale === 'en' ? 'es' : 'en';
-    // Remove current locale prefix if present
-    const pathWithoutLocale = pathname.replace(/^\/(en|es)/, '') || '/';
-    router.push(`/${newLocale}${pathWithoutLocale}`);
+    // Set cookie and reload to apply new locale
+    document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=lax`;
+    router.refresh();
+    // Force reload to apply the new locale
+    window.location.reload();
   };
 
   return (
