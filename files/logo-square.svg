@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Background -->
+  <rect width="512" height="512" fill="#FDF6E3"/>
+  
+  <!-- Main container with border -->
+  <rect x="24" y="24" width="464" height="464" fill="#FFFFFF" stroke="#0D0D0D" stroke-width="8"/>
+  
+  <!-- Bitcoin circle -->
+  <circle cx="256" cy="220" r="120" fill="#F7931A" stroke="#0D0D0D" stroke-width="8"/>
+  
+  <!-- Bitcoin symbol -->
+  <text x="256" y="255" text-anchor="middle" font-family="'Arial Black', 'Helvetica', sans-serif" font-size="140" font-weight="900" fill="#0D0D0D">₿</text>
+  
+  <!-- "PROOF OF WEAR" text below -->
+  <text x="256" y="400" text-anchor="middle" font-family="'Arial Black', 'Helvetica', sans-serif" font-size="42" font-weight="900" fill="#0D0D0D" letter-spacing="4">PROOF</text>
+  <text x="256" y="450" text-anchor="middle" font-family="'Arial Black', 'Helvetica', sans-serif" font-size="32" font-weight="700" fill="#F7931A" letter-spacing="2">OF WEAR</text>
+  
+  <!-- Bottom accent bar -->
+  <rect x="24" y="472" width="464" height="16" fill="#F7931A"/>
+  
+  <!-- Corner accents -->
+  <rect x="24" y="24" width="60" height="12" fill="#FF4136"/>
+  <rect x="24" y="24" width="12" height="60" fill="#FF4136"/>
+  <rect x="428" y="24" width="60" height="12" fill="#FF4136"/>
+  <rect x="476" y="24" width="12" height="60" fill="#FF4136"/>
+</svg>
