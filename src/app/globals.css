@@ -1,12 +1,12 @@
+/* Google Fonts - must be first */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
 @import "tailwindcss";
 
 /* =============================================
    PROOF OF WEAR - Neo-Brutalist Design System
    Design by David @ Oryon
    ============================================= */
-
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
 /* =============================================
    CSS CUSTOM PROPERTIES - LIGHT MODE (DEFAULT)
