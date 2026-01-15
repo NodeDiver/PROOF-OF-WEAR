@@ -1,0 +1,91 @@
+{
+  "common": {
+    "backToHome": "Volver al Inicio",
+    "loading": "Cargando...",
+    "error": "Algo salió mal",
+    "inStock": "En Stock",
+    "outOfStock": "Sin Stock"
+  },
+  "hero": {
+    "badge": "Merch Bitcoin",
+    "title": "PROOF OF WEAR",
+    "subtitle": "No tus llaves, no tus monedas. Pero este merch? 100% tuyo.",
+    "cta": "Stackeá Gear",
+    "scroll": "Scroll"
+  },
+  "marquee": {
+    "text1": "STACKEÁ SATS",
+    "text2": "MANTENETE HUMILDE",
+    "text3": "HODL",
+    "text4": "SOLO 21M",
+    "text5": "PROOF OF WORK"
+  },
+  "products": {
+    "title": "LOS PRODUCTOS",
+    "subtitle": "Dos esenciales. Sin vueltas.",
+    "tshirt": {
+      "name": "La Remera Standard",
+      "description": "Proof of Work en tu pecho. Algodón premium, declaración audaz. 100% algodón orgánico, pre-encogido. Hecha para Bitcoiners reales.",
+      "tagline": "Vestí la revolución."
+    },
+    "stickers": {
+      "name": "Pack Propaganda",
+      "description": "5 stickers de vinilo premium. Esparcí la señal a donde vayas. Resistentes al clima, protección UV. Pegalos en todos lados.",
+      "tagline": "Esparcí la señal."
+    },
+    "viewProduct": "Ver Producto",
+    "addToCart": "Agregar al Carrito"
+  },
+  "sizes": {
+    "label": "Talle",
+    "S": "S",
+    "M": "M",
+    "L": "L",
+    "XL": "XL",
+    "XXL": "XXL"
+  },
+  "cart": {
+    "title": "Tu Stack",
+    "empty": "Tu carrito está vacío",
+    "emptySubtitle": "¡Stackeá algo de gear!",
+    "total": "Total",
+    "checkout": "Ir al Checkout",
+    "continueShopping": "Seguir Comprando",
+    "remove": "Eliminar"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "shippingInfo": "Información de Envío",
+    "orderSummary": "Resumen del Pedido",
+    "email": "Email",
+    "fullName": "Nombre Completo",
+    "address": "Dirección",
+    "city": "Ciudad",
+    "postalCode": "Código Postal",
+    "country": "País",
+    "paymentNote": "El pago se procesará via Lightning Network",
+    "payButton": "Pagar con Bitcoin",
+    "processing": "Procesando..."
+  },
+  "footer": {
+    "tagline": "El dinero duro merece merch duro.",
+    "rights": "Sin derechos reservados. Forkeá esto.",
+    "builtFor": "Hecho para Bitcoiners"
+  },
+  "theme": {
+    "light": "Claro",
+    "dark": "Oscuro",
+    "toggle": "Cambiar tema"
+  },
+  "language": {
+    "toggle": "Cambiar idioma",
+    "en": "English",
+    "es": "Español"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Perdido en la blockchain",
+    "description": "Esta página no existe. Quizás nunca fue minada.",
+    "backHome": "Volver al Inicio"
+  }
+}

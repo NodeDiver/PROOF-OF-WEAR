@@ -1,0 +1,91 @@
+{
+  "common": {
+    "backToHome": "Back to Home",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock"
+  },
+  "hero": {
+    "badge": "Bitcoin Merch",
+    "title": "PROOF OF WEAR",
+    "subtitle": "Not your keys, not your coins. But this merch? 100% yours.",
+    "cta": "Stack Gear",
+    "scroll": "Scroll"
+  },
+  "marquee": {
+    "text1": "STACK SATS",
+    "text2": "STAY HUMBLE",
+    "text3": "HODL",
+    "text4": "21M ONLY",
+    "text5": "PROOF OF WORK"
+  },
+  "products": {
+    "title": "THE GOODS",
+    "subtitle": "Two essentials. No BS.",
+    "tshirt": {
+      "name": "The Standard Tee",
+      "description": "Proof of Work on your chest. Premium cotton, bold statement. 100% organic cotton, pre-shrunk. Made for real Bitcoiners.",
+      "tagline": "Wear the revolution."
+    },
+    "stickers": {
+      "name": "Propaganda Pack",
+      "description": "5 premium vinyl stickers. Spread the signal everywhere you go. Weather-resistant, UV-protected. Stick them everywhere.",
+      "tagline": "Spread the signal."
+    },
+    "viewProduct": "View Product",
+    "addToCart": "Add to Cart"
+  },
+  "sizes": {
+    "label": "Size",
+    "S": "S",
+    "M": "M",
+    "L": "L",
+    "XL": "XL",
+    "XXL": "XXL"
+  },
+  "cart": {
+    "title": "Your Stack",
+    "empty": "Your cart is empty",
+    "emptySubtitle": "Stack some gear!",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "continueShopping": "Continue Shopping",
+    "remove": "Remove"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "shippingInfo": "Shipping Information",
+    "orderSummary": "Order Summary",
+    "email": "Email",
+    "fullName": "Full Name",
+    "address": "Address",
+    "city": "City",
+    "postalCode": "Postal Code",
+    "country": "Country",
+    "paymentNote": "Payment will be processed via Lightning Network",
+    "payButton": "Pay with Bitcoin",
+    "processing": "Processing..."
+  },
+  "footer": {
+    "tagline": "Hard money deserves hard merch.",
+    "rights": "No rights reserved. Fork this.",
+    "builtFor": "Built for Bitcoiners"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "toggle": "Toggle theme"
+  },
+  "language": {
+    "toggle": "Switch language",
+    "en": "English",
+    "es": "Español"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Lost in the blockchain",
+    "description": "This page doesn't exist. Maybe it was never mined.",
+    "backHome": "Back to Home"
+  }
+}
