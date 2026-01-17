@@ -67,6 +67,20 @@
     "payButton": "Pay with Bitcoin",
     "processing": "Processing..."
   },
+  "payment": {
+    "title": "Lightning Payment",
+    "amount": "Amount to Pay",
+    "expiresIn": "Expires in",
+    "waitingForPayment": "Waiting for payment...",
+    "payWithWallet": "Pay with Wallet",
+    "connecting": "Connecting...",
+    "copyInvoice": "Copy Invoice",
+    "paymentSuccess": "Payment Confirmed!",
+    "redirecting": "Redirecting...",
+    "invoiceExpired": "Invoice Expired",
+    "pleaseRetry": "Please try again with a new invoice.",
+    "tryAgain": "Try Again"
+  },
   "footer": {
     "tagline": "Hard money deserves hard merch.",
     "rights": "No rights reserved. Fork this.",

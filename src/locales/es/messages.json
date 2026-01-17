@@ -67,6 +67,20 @@
     "payButton": "Pagar con Bitcoin",
     "processing": "Procesando..."
   },
+  "payment": {
+    "title": "Pago Lightning",
+    "amount": "Monto a Pagar",
+    "expiresIn": "Expira en",
+    "waitingForPayment": "Esperando pago...",
+    "payWithWallet": "Pagar con Wallet",
+    "connecting": "Conectando...",
+    "copyInvoice": "Copiar Factura",
+    "paymentSuccess": "¡Pago Confirmado!",
+    "redirecting": "Redirigiendo...",
+    "invoiceExpired": "Factura Expirada",
+    "pleaseRetry": "Por favor, intentá de nuevo con una nueva factura.",
+    "tryAgain": "Intentar de Nuevo"
+  },
   "footer": {
     "tagline": "El dinero duro merece merch duro.",
     "rights": "Sin derechos reservados. Forkeá esto.",
