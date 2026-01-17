@@ -86,6 +86,27 @@ export interface PaymentResponse {
   paymentUrl?: string;
 }
 
+// Extended Payment Types for NWC
+export interface NWCInvoice {
+  invoiceId: string;
+  orderId: string;
+  bolt11: string;
+  paymentHash: string;
+  amountSats: number;
+  description: string;
+  status: 'pending' | 'paid' | 'expired';
+  expiresAt: string;
+  paidAt?: string;
+}
+
+export interface PaymentStatusResponse {
+  paymentHash: string;
+  status: 'pending' | 'paid' | 'expired';
+  paid: boolean;
+  preimage?: string | null;
+  paidAt?: string | null;
+}
+
 // UI Component Props
 export interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'fire' | 'ghost';
