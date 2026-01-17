@@ -1,18 +1,20 @@
 'use client';
 
 import { useEffect } from 'react';
-import { init } from '@getalby/bitcoin-connect-react';
 
 /**
  * Initialize Bitcoin Connect for Lightning wallet integration
  * Must be mounted once at the app level
+ * Uses dynamic import to avoid SSR issues with HTMLElement
  */
 export function BitcoinConnectProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    init({
-      appName: 'PROOF OF WEAR',
-      filters: ['nwc'],
-      showBalance: true,
+    import('@getalby/bitcoin-connect-react').then(({ init }) => {
+      init({
+        appName: 'PROOF OF WEAR',
+        filters: ['nwc'],
+        showBalance: true,
+      });
     });
   }, []);
 

@@ -3,7 +3,6 @@
 import { useEffect, useState, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
 import { X, Loader2, CheckCircle, AlertCircle, Zap, Copy, Check } from 'lucide-react';
-import { launchPaymentModal } from '@getalby/bitcoin-connect-react';
 import { QRCodeSVG } from 'qrcode.react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/Button';
@@ -66,9 +65,10 @@ export function PaymentModal({ invoice, onSuccess, onClose }: PaymentModalProps)
     return () => clearInterval(timer);
   }, [status, timeLeft]);
 
-  // Launch Bitcoin Connect modal
-  const handleBitcoinConnect = useCallback(() => {
+  // Launch Bitcoin Connect modal (dynamic import to avoid SSR issues)
+  const handleBitcoinConnect = useCallback(async () => {
     setUseBitcoinConnect(true);
+    const { launchPaymentModal } = await import('@getalby/bitcoin-connect-react');
     launchPaymentModal({
       invoice: invoice.bolt11,
       onPaid: () => {
