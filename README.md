@@ -79,13 +79,24 @@ This page allows you to:
 
 ## Pipeline Documentation
 
-See `.pipeline/` folder for implementation docs:
-- `01-site-analysis.md` - Site structure analysis
-- `02-architecture-map.md` - Integration points
-- `03-payment-options.md` - Payment options research
-- `04-implementation-plan.md` - Implementation plan
-- `05-wallet-config.md` - Wallet setup guide
-- `06-test-results.md` - Test results
+This project was built using a multi-agent AI pipeline. See `.pipeline/` folder for complete documentation:
+
+### Guides
+- [**flow.md**](.pipeline/flow.md) - Mermaid diagrams explaining the orchestration flow
+- [**orchestration_prompt.md**](.pipeline/orchestration_prompt.md) - Prompt to replicate this implementation
+- [**start-prompt.md**](.pipeline/start-prompt.md) - Original prompt that started the pipeline
+- [**costs.md**](.pipeline/costs.md) - LLM and infrastructure cost analysis
+
+### Phase Outputs
+- `01-site-analysis.md` - Site structure analysis (Scout Agent)
+- `02-architecture-map.md` - Integration architecture (Architect Agent)
+- `03-payment-options.md` - Payment options research (Researcher Agent)
+- `04-implementation-plan.md` - Implementation plan (Strategist Agent)
+- `05-wallet-config.md` - Wallet setup guide (Wallet Agent)
+- `06-test-results.md` - Test results (Tester Agent)
+
+### Agent Definitions
+See [`.pipeline/agents/`](.pipeline/agents/) for English agent definitions that can be used to replicate this pipeline in other projects.
 
 ## Status
 
