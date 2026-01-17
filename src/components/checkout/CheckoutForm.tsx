@@ -11,11 +11,13 @@ import { getProductById } from '@/lib/products';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Card, CardContent } from '@/components/ui/Card';
-import type { CustomerInfo } from '@/types';
+import { PaymentModal } from './PaymentModal';
+import type { CustomerInfo, NWCInvoice } from '@/types';
 
 /**
  * Neo-Brutalist Checkout Form
  * Two-column layout with form and order summary
+ * Integrates with NWC for Lightning payments
  */
 export function CheckoutForm() {
   const t = useTranslations('checkout');
@@ -33,12 +35,19 @@ export function CheckoutForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const [currentInvoice, setCurrentInvoice] = useState<NWCInvoice | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
+  };
+
+  const handlePaymentSuccess = () => {
+    clearCart();
+    window.location.href = '/checkout/success';
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -64,7 +73,7 @@ export function CheckoutForm() {
 
       const order = await orderResponse.json();
 
-      // Generate Lightning invoice
+      // Generate Lightning invoice via NWC
       const invoiceResponse = await fetch('/api/invoices', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -80,12 +89,9 @@ export function CheckoutForm() {
 
       const invoice = await invoiceResponse.json();
 
-      // For demo: show alert with invoice info
-      // In production: redirect to payment page or show QR modal
-      alert(`Lightning Invoice Generated!\n\nBolt11: ${invoice.bolt11?.substring(0, 50)}...\n\nAmount: ${total} sats`);
-
-      // Clear cart after successful order
-      clearCart();
+      // Open payment modal with real invoice
+      setCurrentInvoice(invoice);
+      setShowPaymentModal(true);
 
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong');
@@ -260,6 +266,15 @@ export function CheckoutForm() {
           </CardContent>
         </Card>
       </div>
+
+      {/* Payment Modal */}
+      {showPaymentModal && currentInvoice && (
+        <PaymentModal
+          invoice={currentInvoice}
+          onSuccess={handlePaymentSuccess}
+          onClose={() => setShowPaymentModal(false)}
+        />
+      )}
     </div>
   );
 }
