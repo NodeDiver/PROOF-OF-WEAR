@@ -1,6 +1,7 @@
 'use client';
 
 import { ThemeProvider } from 'next-themes';
+import { BitcoinConnectProvider } from './providers/BitcoinConnectProvider';
 
 interface ProvidersProps {
   children: React.ReactNode;
@@ -9,6 +10,7 @@ interface ProvidersProps {
 /**
  * Client-side providers wrapper
  * - ThemeProvider for dark/light mode
+ * - BitcoinConnectProvider for Lightning wallet integration
  */
 export function Providers({ children }: ProvidersProps) {
   return (
@@ -18,7 +20,9 @@ export function Providers({ children }: ProvidersProps) {
       enableSystem={false}
       disableTransitionOnChange // Brutalist = instant, no transitions
     >
-      {children}
+      <BitcoinConnectProvider>
+        {children}
+      </BitcoinConnectProvider>
     </ThemeProvider>
   );
 }
