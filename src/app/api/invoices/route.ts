@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { createInvoice } from '@/lib/nwc';
 
 interface CreateInvoiceRequest {
   orderId: string;
@@ -7,12 +8,7 @@ interface CreateInvoiceRequest {
 
 /**
  * POST /api/invoices
- * Creates a Lightning invoice using Alby/NWC
- *
- * In production, you would:
- * 1. Use Alby SDK with NWC (Nostr Wallet Connect)
- * 2. Or connect to your own Lightning node (LND, CLN, etc.)
- * 3. Or use Alby's hosted invoice API
+ * Creates a Lightning invoice using NWC (Nostr Wallet Connect)
  */
 export async function POST(request: NextRequest) {
   try {
@@ -35,28 +31,23 @@ export async function POST(request: NextRequest) {
 
     // Generate invoice ID
     const invoiceId = `INV-${Date.now()}-${Math.random().toString(36).substring(7).toUpperCase()}`;
+    const description = `PROOF OF WEAR - Order ${body.orderId}`;
 
-    // In production with Alby SDK:
-    // import { nwc } from '@getalby/sdk';
-    // const client = new nwc.NWCClient({ nostrWalletConnectUrl: process.env.NWC_URL });
-    // const invoice = await client.makeInvoice({ amount: body.amountSats * 1000, description: `Order ${body.orderId}` });
-
-    // For demo: generate a fake bolt11 invoice
-    const fakeBolt11 = `lnbc${body.amountSats}n1pjexampleinvoice${Date.now()}`;
+    // Create real invoice via NWC
+    const { bolt11, paymentHash } = await createInvoice(body.amountSats, description);
 
     const invoice = {
       invoiceId,
       orderId: body.orderId,
-      bolt11: fakeBolt11,
-      paymentHash: `hash_${invoiceId}`,
+      bolt11,
+      paymentHash,
       amountSats: body.amountSats,
+      description,
       status: 'pending',
       expiresAt: new Date(Date.now() + 10 * 60 * 1000).toISOString(), // 10 minutes
-      // In production: include payment URL or WebLN support
-      paymentUrl: `lightning:${fakeBolt11}`,
     };
 
-    console.log('Invoice created:', invoice);
+    console.log('Invoice created:', { invoiceId, paymentHash, amountSats: body.amountSats });
 
     return NextResponse.json(invoice, { status: 201 });
   } catch (error) {
